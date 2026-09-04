@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Login</title>
     <link rel="stylesheet" href="style.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -117,6 +117,24 @@
             right: 0;
             text-align: center;
         }
+        .message {
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 0.5rem;
+            width: 20rem;
+            text-align: center;
+            font-weight: 450;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
     </style>
 </head>
 <body>
@@ -124,16 +142,27 @@
         <h1>WeLoveSoftDrinks</h1>
     </div>
     <div class="page">
+        <!-- ? FIXED: Changed action from "register" to "login" -->
         <form action="login" method="post">
         <div class="content">
             <div class="title">
-                <h1>Create an account</h1>
-                <h4>Sign in or <a href="#">Create an account</a></h4>
+                <h1>Sign in</h1>
+                <h4>Sign in or <a href="register.jsp">Create an account</a></h4>
             </div>
+            
+            <!-- Display error messages -->
+            <%
+                String errorMessage = (String) request.getAttribute("errorMessage");
+                if (errorMessage != null) {
+            %>
+                <div class="message error"><%= errorMessage %></div>
+            <%
+                }
+            %>
+            
             <div class="input">
-                <input type="text" name="username" placeholder="Username / Email / Phone">
+                <input type="text" name="email" placeholder="Email-id">
                 <input type="password" name="password" placeholder="Password">
-                <input type="password" name="confirm-password" placeholder="Confirm Password">
                 <button type="submit">Submit</button>
             </div>
         </div>

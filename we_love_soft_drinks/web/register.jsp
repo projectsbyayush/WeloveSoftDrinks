@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Register</title>
     <link rel="stylesheet" href="style.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@
         .header h1 {
             margin: 0;
             font-size: 1.5rem;
-            font-weight: 800;
+            font-weight:800;
             color: black;
         }
         .page{
@@ -117,9 +117,25 @@
             right: 0;
             text-align: center;
         }
-        .footer a {
-            color: #0000A3;
-            text-decoration: none;
+        
+        /* NEW: Message styles */
+        .message {
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 0.5rem;
+            width: 20rem;
+            text-align: center;
+            font-weight: 450;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
         }
     </style>
 </head>
@@ -128,16 +144,36 @@
         <h1>WeLoveSoftDrinks</h1>
     </div>
     <div class="page">
-        <form>
+        <form action="register" method="post">
         <div class="content">
             <div class="title">
-                <h1>Sign in</h1>
-                <h4>Sign in or <a href="#">create an account</a></h4>
+                <h1>Create an account</h1>
+                <h4>Create an account or <a href="login.jsp">Sign in</a></h4>
             </div>
+            
+            <!-- NEW: Display messages here -->
+            <%
+                String successMessage = (String) request.getAttribute("successMessage");
+                String errorMessage = (String) request.getAttribute("errorMessage");
+                
+                if (successMessage != null) {
+            %>
+                <div class="message success"><%= successMessage %></div>
+            <%
+                }
+                
+                if (errorMessage != null) {
+            %>
+                <div class="message error"><%= errorMessage %></div>
+            <%
+                }
+            %>
+            
             <div class="input">
-                <input type="text" name="username" placeholder="Username / Email / Phone">
+                <input type="email" name="email" placeholder="Email-id">
                 <input type="password" name="password" placeholder="Password">
-                <button type="submit">Sign In</button>
+                <input type="password" name="confirm-password" placeholder="Confirm Password">
+                <button type="submit">Submit</button>
             </div>
         </div>
         </form>
