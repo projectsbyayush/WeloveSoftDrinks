@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,7 @@
             font-optical-sizing: auto;
             font-style: normal;
             font-variation-settings:"GRAD" 0;
-            font-weight:450;
+            font-weight:800;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -75,12 +76,12 @@
             outline:none;
             border-radius:0.5rem;
             font-size:1rem;
-            border:0.1rem solid #D3D3D3;
+            border:0.1rem solid #9da4b0;
             padding-left:1rem;
             box-sizing:border-box;
         }
         .input input:focus {
-            border-color: #EE4B2B;
+            border-color: #f55d70;
         }
         .input button{
             height:3rem;
@@ -88,14 +89,14 @@
             border:none;
             outline:none;
             border-radius:0.5rem;
-            background-color:#EE4B2B;
+            background-color:#f55d70;
             color:white;
             font-size:1rem;
             cursor:pointer;
             transition: background-color 0.2s;
         }
         .input button:hover{
-            background-color:#EC3713;
+            background-color:#e8576b;
         }
         .title{
             width: 20rem;
@@ -170,9 +171,9 @@
             %>
             
             <div class="input">
-                <input type="email" name="email" placeholder="Email-id">
-                <input type="password" name="password" placeholder="Password">
-                <input type="password" name="confirm-password" placeholder="Confirm Password">
+                <input type="email" name="email" placeholder="Email-id" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="confirm-password" placeholder="Confirm Password" required>
                 <button type="submit">Submit</button>
             </div>
         </div>

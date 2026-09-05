@@ -25,7 +25,6 @@ public class register extends HttpServlet {
         String confirmPassword = request.getParameter("confirm-password");
 
         try {
-
             // Check password
             if (!password.equals(confirmPassword)) {
 
