@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import utils.connection;
 
+// URL: /login  (form in login.jsp posts here)
 @WebServlet("/login")
 public class login extends HttpServlet {
 
@@ -21,36 +22,43 @@ public class login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // Get form data
-        String username = request.getParameter("username");
+        // These names MUST match the "name" in login.jsp inputs
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        // DEBUG: Print to see what's being submitted
-        System.out.println("=== LOGIN ATTEMPT ===");
-        System.out.println("Username from form: '" + username + "'");
-        System.out.println("Password from form: '" + password + "'");
+        // Basic empty check
+        if (email == null || email.trim().isEmpty()
+                || password == null || password.isEmpty()) {
+            request.setAttribute("errorMessage", "Please enter email and password.");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+            return;
+        }
 
         try {
             Connection conn = connection.takeconnection();
 
-            // Check if user exists (using 'login' column from your database)
+            if (conn == null) {
+                request.setAttribute("errorMessage", "Database not connected.");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+                return;
+            }
+
+            // Check if user exists
             String sql = "SELECT * FROM users WHERE login = ? AND password = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, username);
+            ps.setString(1, email.trim());
             ps.setString(2, password);
-            
+
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
-                // Login successful
-                System.out.println("Login SUCCESS for: " + username);
+                // Login OK -> save user in session and go to home
                 HttpSession session = request.getSession();
-                session.setAttribute("user", username);
-                response.sendRedirect("dashboard.jsp");
+                session.setAttribute("user", email.trim());
+                response.sendRedirect("index.jsp");
             } else {
-                // Login failed
-                System.out.println("Login FAILED for: " + username);
-                request.setAttribute("errorMessage", "Invalid username or password!");
+                // Login failed -> show message on same page
+                request.setAttribute("errorMessage", "Invalid email or password!");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
 
@@ -63,5 +71,12 @@ public class login extends HttpServlet {
             request.setAttribute("errorMessage", "Login Failed: " + e.getMessage());
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
+    }
+
+    // If someone opens /login directly, show login page
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.sendRedirect("login.jsp");
     }
 }
