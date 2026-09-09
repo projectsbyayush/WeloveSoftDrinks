@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /index.jsp
+Allow: /shop.jsp
+Disallow: /cart.jsp
+Disallow: /checkout.jsp
+Disallow: /orders.jsp
+Disallow: /dashboard.jsp
+Disallow: /login.jsp
+Disallow: /register.jsp

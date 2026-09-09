@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Orders - WeLoveSoftDrinks</title>
+    <meta name="description" content="View your WeLoveSoftDrinks order history." />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#3d1421" />
+    <link rel="icon" type="image/png" href="Assets/logo.png" />
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">

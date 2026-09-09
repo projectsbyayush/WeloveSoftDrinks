@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Collection - WeLoveSoftDrinks</title>
+    <meta name="description" content="Shop all eight WeLoveSoftDrinks signature pours — cocktail mixers, sparkling coolers and zero-alcohol brews." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#3d1421" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="The Collection - WeLoveSoftDrinks" />
+    <meta property="og:description" content="Cocktail mixers, sparkling coolers and zero-alcohol brews. Pick your pour." />
+    <meta property="og:image" content="Assets/logo.png" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/png" href="Assets/logo.png" />
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">

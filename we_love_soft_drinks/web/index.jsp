@@ -5,6 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeLoveSoftDrinks - Premium Beverages</title>
+    <meta name="description" content="WeLoveSoftDrinks — premium small-batch cocktail mixers, sparkling coolers and zero-alcohol brews, delivered chilled in 30 minutes." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#3d1421" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="WeLoveSoftDrinks - Premium Beverages" />
+    <meta property="og:description" content="Premium small-batch mixers, sparkling coolers and zero-alcohol brews, delivered chilled." />
+    <meta property="og:image" content="Assets/logo.png" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/png" href="Assets/logo.png" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "WeLoveSoftDrinks",
+      "description": "Premium small-batch cocktail mixers, sparkling coolers and zero-alcohol brews.",
+      "image": "Assets/logo.png"
+    }
+    </script>
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -191,17 +209,17 @@
             <div class="quote">
                 <div class="stars">★★★★★</div>
                 <p>"The Mango Chilli Mojito tastes straight out of a premium bar. My guests kept asking where it was from."</p>
-                <small>— Priya S., Mumbai</small>
+                <small>— Verified Buyer</small>
             </div>
             <div class="quote">
                 <div class="stars">★★★★★</div>
                 <p>"Ordered at 7, chilled bottles at the door by 7:30. The ginger ale is dangerously good."</p>
-                <small>— Rahul M., Delhi</small>
+                <small>— Verified Buyer</small>
             </div>
             <div class="quote">
                 <div class="stars">★★★★★</div>
                 <p>"Finally a zero-alcohol option that doesn't feel like a compromise. Cranberry Beer is now a fridge staple."</p>
-                <small>— Ananya K., Bangalore</small>
+                <small>— Verified Buyer</small>
             </div>
         </div>
     </div>
