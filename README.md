@@ -2,6 +2,12 @@
 
 Premium beverage e-commerce web app — browse mixers, cart, checkout & order history, built with JSP, Servlets, MySQL and Docker.
 
+## Demo
+
+<video src="demo.mp4" controls width="100%"></video>
+
+*Login → Shop → Cart → Checkout → My Orders*
+
 ## Features
 
 - User registration, login and logout (MySQL + sessions)
