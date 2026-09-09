@@ -1,0 +1,5 @@
+# Keep the Docker build fast - ignore local NetBeans files
+we_love_soft_drinks/build/
+we_love_soft_drinks/dist/
+we_love_soft_drinks/nbproject/private/
+.git/

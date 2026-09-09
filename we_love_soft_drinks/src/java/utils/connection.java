@@ -7,10 +7,22 @@ import java.sql.DriverManager;
 // Usage: Connection conn = connection.takeconnection();
 public class connection {
 
-    // Change these 3 values as per your MySQL setup
-    private static final String URL = "jdbc:mysql://localhost:3306/welovesoftdrinks";
-    private static final String USER = "root";
-    private static final String PASSWORD = "";
+    // Database settings.
+    // On your laptop it uses the fallback values (localhost).
+    // On Render/Railway you set these as Environment Variables instead,
+    // so no password is ever saved in the code:
+    //   DB_URL  = jdbc:mysql://HOST:PORT/welovesoftdrinks
+    //   DB_USER = your db username
+    //   DB_PASS = your db password
+    private static final String URL = env("DB_URL", "jdbc:mysql://localhost:3306/welovesoftdrinks");
+    private static final String USER = env("DB_USER", "root");
+    private static final String PASSWORD = env("DB_PASS", "");
+
+    // Read an environment variable, or use fallback if not set
+    private static String env(String key, String fallback) {
+        String value = System.getenv(key);
+        return (value == null || value.isEmpty()) ? fallback : value;
+    }
 
     public static Connection takeconnection() {
         try {
