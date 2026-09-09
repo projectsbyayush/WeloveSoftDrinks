@@ -4,7 +4,7 @@ Premium beverage e-commerce web app — browse mixers, cart, checkout & order hi
 
 ## Demo
 
-<video src="demo.mp4" controls width="100%"></video>
+<video src="https://raw.githubusercontent.com/projectsbyayush/WeloveSoftDrinks/main/demo.mp4" controls width="100%"></video>
 
 *Login → Shop → Cart → Checkout → My Orders*
 
